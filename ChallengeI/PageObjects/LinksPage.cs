@@ -6,14 +6,14 @@ namespace ChallengeI.PageObjects
     {
         public LinksPage(IWebDriver driver) : base(driver) { }
 
-        private IWebElement FirstButton => _driver.FindElement(By.CssSelector(".button-class-selector"));
-        private IWebElement GoBackButton => _driver.FindElement(By.Id("go-back-button-id"));
+        private IWebElement FirstButton => _driver.FindElement(By.CssSelector("#nav a:nth-child(1)"));
+        private IWebElement GoBackButton => _driver.FindElement(By.CssSelector(".btn.btn-green"));
 
         public string GetFirstButtonText() => FirstButton.Text;
 
         public void ClickButton(string buttonName)
         {
-            var button = _driver.FindElement(By.LinkText(buttonName));
+            var button = _driver.FindElement(By.XPath($"//a[text()='{buttonName}']"));
             button.Click();
         }
 

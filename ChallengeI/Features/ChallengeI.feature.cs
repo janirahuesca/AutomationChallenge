@@ -108,7 +108,7 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.Given("a user navigates to the website \"https://qaplayground.dev/apps/links/\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
 #line 10
- testRunner.Then("the first selected button should be \"Home\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("the first selected button should be \"HOME\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -116,11 +116,10 @@ this.ScenarioInitialize(scenarioInfo);
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Navigate through each link and verify content")]
-        [NUnit.Framework.TestCaseAttribute("Home", "Home", null)]
-        [NUnit.Framework.TestCaseAttribute("About", "About", null)]
-        [NUnit.Framework.TestCaseAttribute("Blog", "Blog", null)]
-        [NUnit.Framework.TestCaseAttribute("Portfolio", "Portfolio", null)]
-        [NUnit.Framework.TestCaseAttribute("Contact", "Contact", null)]
+        [NUnit.Framework.TestCaseAttribute("About", "Welcome to the About Page", null)]
+        [NUnit.Framework.TestCaseAttribute("Blog", "Welcome to the Blog Page", null)]
+        [NUnit.Framework.TestCaseAttribute("Portfolio", "Welcome to the Portfolio Page", null)]
+        [NUnit.Framework.TestCaseAttribute("Contact", "Welcome to the Contact Page", null)]
         public virtual void NavigateThroughEachLinkAndVerifyContent(string button, string pageContent, string[] exampleTags)
         {
             string[] tagsOfScenario = exampleTags;
