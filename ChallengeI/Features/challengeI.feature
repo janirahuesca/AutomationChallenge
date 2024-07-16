@@ -22,4 +22,3 @@ Scenario Outline: Navigate through each link and verify content
       | Blog       | Welcome to the Blog Page      |
       | Portfolio  | Welcome to the Portfolio Page |
       | Contact    | Welcome to the Contact Page   |
-
