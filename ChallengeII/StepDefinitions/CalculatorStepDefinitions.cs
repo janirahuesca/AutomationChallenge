@@ -1,4 +1,4 @@
-namespace ChallengeI.StepDefinitions
+namespace ChallengeII.StepDefinitions
 {
     [Binding]
     public sealed class CalculatorStepDefinitions

@@ -33,6 +33,7 @@ namespace ChallengeI.StepDefinitions
         public void GivenAUserNavigatesToTheWebsite(string url)
         {
             _driver.Navigate().GoToUrl(url); // Navegamos a la URL especificada
+            Thread.Sleep(2000);
         }
 
         [Then(@"the first selected button should be ""([^""]*)""")] // Verificar el nombre del primer botón seleccionado
@@ -40,12 +41,14 @@ namespace ChallengeI.StepDefinitions
         {
             string actualButtonName = _linksPage.GetFirstButtonText(); // Obtiene el nombre del primer botón
             Assert.AreEqual(expectedButtonName, actualButtonName, $"Expected '{expectedButtonName}' button, but found '{actualButtonName}'."); // Compara con el nombre esperado y afirmamos
+            Thread.Sleep(2000);
         }
 
         [When(@"the user clicks on the ""([^""]*)"" button")] // Hacer clic en un botón específico
         public void WhenTheUserClicksOnTheButton(string buttonName)
         {
             _linksPage.ClickButton(buttonName); // Hacemos clic en el botón especificado
+            Thread.Sleep(2000);
         }
 
         [Then(@"the user should see the ""([^""]*)"" page")] // Verificar que se vea una página específica
@@ -53,12 +56,14 @@ namespace ChallengeI.StepDefinitions
         {
             string actualPageContent = _linksPage.GetPageContent(); // Obtenemos el contenido de la página
             Assert.IsTrue(actualPageContent.Contains(expectedPageContent, StringComparison.OrdinalIgnoreCase), $"Expected to find '{expectedPageContent}' in page content."); // Verificamos que el contenido esperado esté presente en la página
+            Thread.Sleep(2000);
         }
 
         [When(@"the user click on the ""GO BACK"" button")] // Hacer clic en el botón "GO BACK"
         public void WhenTheUserClickOnTheGoBackButton()
         {
             _linksPage.ClickGoBack(); // Hacemos clic en el botón "GO BACK"
+            Thread.Sleep(2000);
         }
 
         [Then(@"the user should be back on the home page")] // Verificar que se esté de vuelta en la página de inicio
@@ -66,6 +71,7 @@ namespace ChallengeI.StepDefinitions
         {
             string actualButtonName = _linksPage.GetFirstButtonText(); // Obtenemos el nombre del primer botón para verificar si estamos en la página de inicio
             Assert.AreEqual("HOME", actualButtonName, "Expected to be back on the home page."); // Verificamos que el nombre del botón sea "HOME"
+            Thread.Sleep(2000);
         }
     }
 }
