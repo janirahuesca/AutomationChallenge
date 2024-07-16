@@ -28,7 +28,7 @@ namespace ChallengeI.Features
         
         private string[] _featureTags = ((string[])(null));
         
-#line 1 "ChallengeI.feature"
+#line 1 "challengeI.feature"
 #line hidden
         
         [NUnit.Framework.OneTimeSetUpAttribute()]
