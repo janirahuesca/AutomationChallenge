@@ -45,16 +45,20 @@ namespace ChallengeIII.StepDefinitions
             }
         }
 
-        [When(@"the user adds the ""(.*)"" tag")]
-        public void WhenTheUserAddsTheTag(string tagName)
+        [When(@"the user adds the tags ""(.*)"", ""(.*)"", ""(.*)""")]
+        public void WhenTheUserAddsTheTags(string tag1, string tag2, string tag3)
         {
-            _tagsPage.AddTag(tagName);
+            _tagsPage.AddTag(tag1);
+            _tagsPage.AddTag(tag2);
+            _tagsPage.AddTag(tag3);
         }
 
-        [Then(@"the ""(.*)"" tag should be loaded")]
-        public void ThenTheTagShouldBeLoaded(string tagName)
+        [Then(@"the tags ""(.*)"", ""(.*)"", ""(.*)"" should be loaded")]
+        public void ThenTheTagsShouldBeLoaded(string tag1, string tag2, string tag3)
         {
-            Assert.IsTrue(_tagsPage.IsTagLoaded(tagName), $"Tag '{tagName}' was not loaded.");
+            Assert.IsTrue(_tagsPage.IsTagLoaded(tag1), $"Tag '{tag1}' was not loaded.");
+            Assert.IsTrue(_tagsPage.IsTagLoaded(tag2), $"Tag '{tag2}' was not loaded.");
+            Assert.IsTrue(_tagsPage.IsTagLoaded(tag3), $"Tag '{tag3}' was not loaded.");
         }
 
         [When(@"the user removes the ""(.*)"" tag")]
