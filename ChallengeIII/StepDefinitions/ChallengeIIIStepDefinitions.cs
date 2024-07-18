@@ -1,44 +1,84 @@
+using NUnit.Framework;
+using OpenQA.Selenium.Chrome;
+using OpenQA.Selenium;
+using ChallengeIII.PageObjects;
+
 namespace ChallengeIII.StepDefinitions
 {
     [Binding]
-    public sealed class ChallengeIIIStepDefinitions
+    public class TagsStepDefinitions
     {
-        // For additional details on SpecFlow step definitions see https://go.specflow.org/doc-stepdef
+        private IWebDriver _driver;
+        private TagsInputBoxPage _tagsPage;
 
-        [Given("the first number is (.*)")]
-        public void GivenTheFirstNumberIs(int number)
+        [BeforeScenario]
+        public void Setup()
         {
-            //TODO: implement arrange (precondition) logic
-            // For storing and retrieving scenario-specific data see https://go.specflow.org/doc-sharingdata
-            // To use the multiline text or the table argument of the scenario,
-            // additional string/Table parameters can be defined on the step definition
-            // method. 
-
-            throw new PendingStepException();
+            _driver = new ChromeDriver();
+            _driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
+            _tagsPage = new TagsInputBoxPage(_driver);
         }
 
-        [Given("the second number is (.*)")]
-        public void GivenTheSecondNumberIs(int number)
+        [AfterScenario]
+        public void TearDown()
         {
-            //TODO: implement arrange (precondition) logic
-
-            throw new PendingStepException();
+            if (_driver != null)
+            {
+                _driver.Quit();
+                _driver = null;
+            }
         }
 
-        [When("the two numbers are added")]
-        public void WhenTheTwoNumbersAreAdded()
+        [Given(@"a user navigates to the website ""(.*)""")]
+        public void GivenAUserNavigatesToTheWebsite(string url)
         {
-            //TODO: implement act (action) logic
-
-            throw new PendingStepException();
+            _driver.Navigate().GoToUrl(url);
         }
 
-        [Then("the result should be (.*)")]
-        public void ThenTheResultShouldBe(int result)
+        [Given(@"the user has the ""(.*)"" tag loaded")]
+        public void GivenTheUserHasTheTagLoaded(string tagName)
         {
-            //TODO: implement assert (verification) logic
+            if (!_tagsPage.IsTagLoaded(tagName))
+            {
+                _tagsPage.AddTag(tagName);
+                Assert.IsTrue(_tagsPage.IsTagLoaded(tagName), $"Failed to load the tag: {tagName}");
+            }
+        }
 
-            throw new PendingStepException();
+        [When(@"the user adds the ""(.*)"" tag")]
+        public void WhenTheUserAddsTheTag(string tagName)
+        {
+            _tagsPage.AddTag(tagName);
+        }
+
+        [Then(@"the ""(.*)"" tag should be loaded")]
+        public void ThenTheTagShouldBeLoaded(string tagName)
+        {
+            Assert.IsTrue(_tagsPage.IsTagLoaded(tagName), $"Tag '{tagName}' was not loaded.");
+        }
+
+        [When(@"the user removes the ""(.*)"" tag")]
+        public void WhenTheUserRemovesTheTag(string tagName)
+        {
+            _tagsPage.RemoveTag(tagName);
+        }
+
+        [Then(@"the ""(.*)"" tag should be removed")]
+        public void ThenTheTagShouldBeRemoved(string tagName)
+        {
+            Assert.IsFalse(_tagsPage.IsTagLoaded(tagName), $"Tag '{tagName}' was not removed.");
+        }
+
+        [When(@"the user clicks on the ""Remove All"" button")]
+        public void WhenTheUserClicksOnTheRemoveAllButton()
+        {
+            _tagsPage.RemoveAllTags();
+        }
+
+        [Then(@"all the tags should be removed")]
+        public void ThenAllTheTagsShouldBeRemoved()
+        {
+            Assert.IsTrue(_tagsPage.AreAllTagsRemoved(), "Not all tags were removed.");
         }
     }
 }
