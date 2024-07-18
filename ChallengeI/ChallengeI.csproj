@@ -20,4 +20,8 @@
     <Folder Include="Drivers\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\ChallengeII\ChallengeII.csproj" />
+  </ItemGroup>
+
 </Project>
