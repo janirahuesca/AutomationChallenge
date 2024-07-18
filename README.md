@@ -35,11 +35,11 @@ Before running the tests, ensure you have the following installed:
 
 ## Reference (consulted sources)
 
-- [BDD Testing using SpecFlow and NUnit with .NET Core – andrewhalil.com]([https://andrewhalil.com](https://andrewhalil.com/2020/11/13/bdd-testing-using-specflow-and-nunit-with-net-core/)
-- [SpecFlow Selenium C# Tutorial Full Course 2023 | SpecFlow C# Tutorial (youtube.com)]([https://www.youtube.com](https://www.youtube.com/watch?v=7xPcalwU76c&list=PLUeDIlio4THEvoy4oRApx9zaQnXGp3aQl)
-- [Page Object Model (POM) In Selenium With Examples || Toolsqa]([https://www.toolsqa.com](https://www.toolsqa.com/selenium-webdriver/page-object-model/)
-- [Page object models | Selenium]([https://www.selenium.dev](https://www.selenium.dev/documentation/test_practices/encouraged/page_object_models/)
-- [Working with IFrames and frames | Selenium]([https://www.selenium.dev](https://www.selenium.dev/documentation/webdriver/interactions/frames/)
+- [BDD Testing using SpecFlow and NUnit with .NET Core – andrewhalil.com]([https://andrewhalil.com](https://andrewhalil.com/2020/11/13/bdd-testing-using-specflow-and-nunit-with-net-core/))
+- [SpecFlow Selenium C# Tutorial Full Course 2023 | SpecFlow C# Tutorial (youtube.com)]([https://www.youtube.com](https://www.youtube.com/watch?v=7xPcalwU76c&list=PLUeDIlio4THEvoy4oRApx9zaQnXGp3aQl))
+- [Page Object Model (POM) In Selenium With Examples || Toolsqa]([https://www.toolsqa.com](https://www.toolsqa.com/selenium-webdriver/page-object-model/))
+- [Page object models | Selenium]([https://www.selenium.dev](https://www.selenium.dev/documentation/test_practices/encouraged/page_object_models/))
+- [Working with IFrames and frames | Selenium]([https://www.selenium.dev](https://www.selenium.dev/documentation/webdriver/interactions/frames/))
 
 
 
