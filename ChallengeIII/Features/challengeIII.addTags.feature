@@ -5,13 +5,7 @@
   So that I can ensure that the tags are added correctly
 
 @tagsaddition
-Scenario Outline: Add a tag
+Scenario: Add multiple tags
 	Given a user navigates to the website "https://qaplayground.dev/apps/tags-input-box/"
-	When the user adds the "<Tag>" tag
-	Then the "<Tag>" tag should be loaded
-
-	Examples:
-	  | Tag     | 
-	  | Wolters    |
-	  | Kluwers    | 
-	  | Automation | 
+	When the user adds the tags "Wolters", "Kluwers", "Automation"
+	Then the tags "Wolters", "Kluwers", "Automation" should be loaded

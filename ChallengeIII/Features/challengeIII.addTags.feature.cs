@@ -75,23 +75,14 @@ namespace ChallengeIII.Features
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Add a tag")]
+        [NUnit.Framework.DescriptionAttribute("Add multiple tags")]
         [NUnit.Framework.CategoryAttribute("tagsaddition")]
-        [NUnit.Framework.TestCaseAttribute("Wolters", null)]
-        [NUnit.Framework.TestCaseAttribute("Kluwers", null)]
-        [NUnit.Framework.TestCaseAttribute("Automation", null)]
-        public virtual void AddATag(string tag, string[] exampleTags)
+        public virtual void AddMultipleTags()
         {
-            string[] @__tags = new string[] {
+            string[] tagsOfScenario = new string[] {
                     "tagsaddition"};
-            if ((exampleTags != null))
-            {
-                @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
-            }
-            string[] tagsOfScenario = @__tags;
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            argumentsOfScenario.Add("Tag", tag);
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Add a tag", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Add multiple tags", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
 #line 8
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
@@ -116,10 +107,10 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.Given("a user navigates to the website \"https://qaplayground.dev/apps/tags-input-box/\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
 #line 10
- testRunner.When(string.Format("the user adds the \"{0}\" tag", tag), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.When("the user adds the tags \"Wolters\", \"Kluwers\", \"Automation\"", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 11
- testRunner.Then(string.Format("the \"{0}\" tag should be loaded", tag), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("the tags \"Wolters\", \"Kluwers\", \"Automation\" should be loaded", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
